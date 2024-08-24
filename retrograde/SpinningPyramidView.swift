@@ -1,44 +1,22 @@
 import SwiftUI
+import SceneKit
 
 struct SpinningPyramidView: View {
     var body: some View {
         ZStack {
-            // Warm background color gradient
+            // Warm gradient background
             LinearGradient(
                 gradient: Gradient(colors: [.pink.opacity(0.3), .orange.opacity(0.3), .red.opacity(0.3)]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
             .edgesIgnoringSafeArea(.all)
+
+            // SceneKit view with rotating pyramid
+            RotatingPyramidView()
+                .frame(width: 350, height: 300)
             
-            // Light rays effect with warm colors
-            LinearGradient(
-                gradient: Gradient(colors: [.clear, .white.opacity(0.2)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .blendMode(.screen)
-            
-            // 3D pyramid structure
-            ZStack {
-                PyramidFace()
-                    .fill(LinearGradient(
-                        gradient: Gradient(colors: [Color.red, Color.orange]),
-                        startPoint: .top,
-                        endPoint: .bottomTrailing
-                    ))
-                
-                PyramidFace()
-                    .fill(LinearGradient(
-                        gradient: Gradient(colors: [Color.orange, Color.pink]),
-                        startPoint: .top,
-                        endPoint: .bottomTrailing
-                    ))
-                    .rotationEffect(.degrees(120)) // Offset the second face for a 3D effect
-            }
-            .frame(width: 200, height: 200)
-            
-            // Overlay to ensure text visibility
+            // Overlay to ensure text visibility (optional)
             Color.black.opacity(0.2)
                 .edgesIgnoringSafeArea(.all)
                 .blendMode(.overlay)
@@ -46,19 +24,66 @@ struct SpinningPyramidView: View {
     }
 }
 
-struct PyramidFace: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        let top = CGPoint(x: rect.midX, y: rect.minY)
-        let bottomLeft = CGPoint(x: rect.minX, y: rect.maxY)
-        let bottomRight = CGPoint(x: rect.maxX, y: rect.maxY)
+struct RotatingPyramidView: UIViewRepresentable {
+    func makeUIView(context: Context) -> SCNView {
+        let scnView = SCNView()
+        scnView.scene = createScene()
+        scnView.allowsCameraControl = false
+        scnView.autoenablesDefaultLighting = true
+        scnView.backgroundColor = UIColor.clear // Make the background clear
+        return scnView
+    }
+    
+    func updateUIView(_ scnView: SCNView, context: Context) {
+        // No need to update anything in this example
+    }
+    
+    func createScene() -> SCNScene {
+        let scene = SCNScene()
         
-        path.move(to: top)
-        path.addLine(to: bottomLeft)
-        path.addLine(to: bottomRight)
-        path.closeSubpath()
+        // Create the pyramid with a shorter height
+        let pyramidGeometry = SCNPyramid(width: 1.25, height: 1, length: 1.25)
         
-        return path
+        // Apply a softer gradient texture to the pyramid
+        let gradient = UIImage.gradientImage(
+            with: [UIColor.systemPink.withAlphaComponent(0.5),
+                   UIColor.systemOrange.withAlphaComponent(0.5),
+                   UIColor.systemRed.withAlphaComponent(0.5)],
+            size: CGSize(width: 100, height: 100)
+        )
+        pyramidGeometry.firstMaterial?.diffuse.contents = gradient
+        
+        let pyramidNode = SCNNode(geometry: pyramidGeometry)
+        pyramidNode.position = SCNVector3(0, 0, 0)
+        
+        // Add the pyramid to the scene
+        scene.rootNode.addChildNode(pyramidNode)
+        
+        // Add slower rotation animation
+        let rotation = CABasicAnimation(keyPath: "rotation")
+        rotation.toValue = NSValue(scnVector4: SCNVector4(0, 1, 0, CGFloat.pi * 2))
+        rotation.duration = 30
+        rotation.repeatCount = .infinity
+        pyramidNode.addAnimation(rotation, forKey: "rotation")
+        
+        return scene
+    }
+}
+
+extension UIImage {
+    static func gradientImage(with colors: [UIColor], size: CGSize) -> UIImage? {
+        let layer = CAGradientLayer()
+        layer.frame = CGRect(origin: .zero, size: size)
+        layer.colors = colors.map { $0.cgColor }
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.endPoint = CGPoint(x: 1, y: 1)
+        
+        UIGraphicsBeginImageContext(layer.frame.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        layer.render(in: context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
 

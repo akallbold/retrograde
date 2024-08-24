@@ -1,18 +1,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isRetrograde: Bool? = true
+    @State private var isRetrograde: Bool? = false
     @State private var transitionDate: Date? = nil
 
     var body: some View {
         ZStack {
             if let isRetrograde = isRetrograde, let transitionDate = transitionDate {
                 if isRetrograde {
-                    StarFieldView().edgesIgnoringSafeArea(.all)
-                    GlowingText(text: "Mercury is in Retrograde until \(formattedDate(transitionDate))")
                     SpinningPyramidView()
+                    Text("Mercury is in Retrograde until \(formattedDate(transitionDate))")
+                        .font(.custom("Optima", size: 26))
+                        .foregroundColor(.white)
+                        .padding()
+                
+                   
                 } else {
-                    BreathingCircleView()  // Consolidated view used here
+                    BreathingCircleView()
                     VStack {
                         Text("Mercury is not in Retrograde until \(formattedDate(transitionDate))")
                             .font(.custom("Optima", size: 26))
@@ -34,13 +38,13 @@ struct ContentView: View {
 
     func checkStatus() {
         let status = checkRetrogradeStatus()
-//        self.isRetrograde = status.isRetrograde
+        self.isRetrograde = status.isRetrograde
         self.transitionDate = status.transitionDate
     }
 
     func formattedDate(_ date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateFormat = "MMMM d"
         return formatter.string(from: date)
     }
 }

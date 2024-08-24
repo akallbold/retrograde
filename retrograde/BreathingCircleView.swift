@@ -6,7 +6,6 @@ struct BreathingCircleView: View {
     
     var body: some View {
         ZStack {
-            // Peaceful background color gradient
             LinearGradient(
                 gradient: Gradient(colors: [.blue.opacity(0.3), .purple.opacity(0.3)]),
                 startPoint: .topLeading,
@@ -14,7 +13,6 @@ struct BreathingCircleView: View {
             )
             .edgesIgnoringSafeArea(.all)
             
-            // Light rays effect
             LinearGradient(
                 gradient: Gradient(colors: [.clear, .white.opacity(0.2)]),
                 startPoint: .top,
@@ -29,7 +27,6 @@ struct BreathingCircleView: View {
             }
             .blendMode(.screen)
             
-            // Expanding and contracting circle
             Circle()
                 .fill(LinearGradient(
                     gradient: Gradient(colors: [Color.white.opacity(0.8), Color.blue.opacity(0.8)]),
@@ -41,10 +38,12 @@ struct BreathingCircleView: View {
                 .animation(Animation.easeInOut(duration: 8).repeatForever(autoreverses: true))  // Slower animation
                 .onAppear {scale = 1.0}
             
-            // Overlay to ensure text visibility
             Color.black.opacity(0.2)
                 .edgesIgnoringSafeArea(.all)
                 .blendMode(.overlay)
         }
     }
+}
+#Preview {
+    BreathingCircleView()
 }

@@ -16,12 +16,14 @@
 		4524C9202C742894009FE4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4524C91F2C742894009FE4D0 /* Assets.xcassets */; };
 		4524C9242C742894009FE4D0 /* RetrogradeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4524C9132C742893009FE4D0 /* RetrogradeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4524C92A2C742B90009FE4D0 /* RetrogradeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524C9282C7428CD009FE4D0 /* RetrogradeProvider.swift */; };
-		4524C92D2C768DBE009FE4D0 /* StarFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524C92C2C768DBE009FE4D0 /* StarFieldView.swift */; };
-		45299F162C7A590A00BBF261 /* GlowingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F152C7A590A00BBF261 /* GlowingText.swift */; };
-		45299F182C7A5D5800BBF261 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F172C7A5D5800BBF261 /* AnimatedImageView.swift */; };
 		45299F1A2C7A5DE000BBF261 /* BreathingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F192C7A5DE000BBF261 /* BreathingCircleView.swift */; };
 		45299F1C2C7A694D00BBF261 /* RetrogradeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F1B2C7A694D00BBF261 /* RetrogradeData.swift */; };
 		45299F1E2C7A744600BBF261 /* SpinningPyramidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F1D2C7A744600BBF261 /* SpinningPyramidView.swift */; };
+		45299F202C7A82E600BBF261 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45299F1F2C7A82E600BBF261 /* SceneKit.framework */; };
+		45299F212C7A82EF00BBF261 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45299F1F2C7A82E600BBF261 /* SceneKit.framework */; };
+		45299F232C7A867E00BBF261 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F222C7A867E00BBF261 /* NoDataView.swift */; };
+		45299F282C7A89A800BBF261 /* StaticCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F262C7A890100BBF261 /* StaticCircleView.swift */; };
+		45299F292C7A89AD00BBF261 /* StaticPyramidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45299F242C7A88EA00BBF261 /* StaticPyramidView.swift */; };
 		45669D472C74202B00580218 /* retrogradeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45669D462C74202B00580218 /* retrogradeApp.swift */; };
 		45669D492C74202B00580218 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45669D482C74202B00580218 /* ContentView.swift */; };
 		45669D4B2C74202C00580218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45669D4A2C74202C00580218 /* Assets.xcassets */; };
@@ -78,12 +80,13 @@
 		4524C91F2C742894009FE4D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4524C9212C742894009FE4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4524C9282C7428CD009FE4D0 /* RetrogradeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrogradeProvider.swift; sourceTree = "<group>"; };
-		4524C92C2C768DBE009FE4D0 /* StarFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFieldView.swift; sourceTree = "<group>"; };
-		45299F152C7A590A00BBF261 /* GlowingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowingText.swift; sourceTree = "<group>"; };
-		45299F172C7A5D5800BBF261 /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
 		45299F192C7A5DE000BBF261 /* BreathingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingCircleView.swift; sourceTree = "<group>"; };
 		45299F1B2C7A694D00BBF261 /* RetrogradeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrogradeData.swift; sourceTree = "<group>"; };
 		45299F1D2C7A744600BBF261 /* SpinningPyramidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningPyramidView.swift; sourceTree = "<group>"; };
+		45299F1F2C7A82E600BBF261 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		45299F222C7A867E00BBF261 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		45299F242C7A88EA00BBF261 /* StaticPyramidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticPyramidView.swift; sourceTree = "<group>"; };
+		45299F262C7A890100BBF261 /* StaticCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticCircleView.swift; sourceTree = "<group>"; };
 		45669D432C74202B00580218 /* retrograde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = retrograde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45669D462C74202B00580218 /* retrogradeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retrogradeApp.swift; sourceTree = "<group>"; };
 		45669D482C74202B00580218 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4524C9152C742893009FE4D0 /* SwiftUI.framework in Frameworks */,
+				45299F212C7A82EF00BBF261 /* SceneKit.framework in Frameworks */,
 				4524C9142C742893009FE4D0 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45299F202C7A82E600BBF261 /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +145,8 @@
 				4524C9172C742893009FE4D0 /* RetrogradeWidgetBundle.swift */,
 				4524C9192C742893009FE4D0 /* RetrogradeWidgetLiveActivity.swift */,
 				4524C91B2C742893009FE4D0 /* RetrogradeWidget.swift */,
+				45299F262C7A890100BBF261 /* StaticCircleView.swift */,
+				45299F242C7A88EA00BBF261 /* StaticPyramidView.swift */,
 				4524C91D2C742893009FE4D0 /* AppIntent.swift */,
 				4524C91F2C742894009FE4D0 /* Assets.xcassets */,
 				4524C9212C742894009FE4D0 /* Info.plist */,
@@ -173,17 +180,15 @@
 		45669D452C74202B00580218 /* retrograde */ = {
 			isa = PBXGroup;
 			children = (
+				45669D4D2C74202C00580218 /* Preview Content */,
 				45669D462C74202B00580218 /* retrogradeApp.swift */,
 				45669D482C74202B00580218 /* ContentView.swift */,
-				4524C92C2C768DBE009FE4D0 /* StarFieldView.swift */,
 				45669D4A2C74202C00580218 /* Assets.xcassets */,
 				45669D4C2C74202C00580218 /* retrograde.entitlements */,
-				45669D4D2C74202C00580218 /* Preview Content */,
-				45299F152C7A590A00BBF261 /* GlowingText.swift */,
-				45299F172C7A5D5800BBF261 /* AnimatedImageView.swift */,
 				45299F192C7A5DE000BBF261 /* BreathingCircleView.swift */,
 				45299F1B2C7A694D00BBF261 /* RetrogradeData.swift */,
 				45299F1D2C7A744600BBF261 /* SpinningPyramidView.swift */,
+				45299F222C7A867E00BBF261 /* NoDataView.swift */,
 			);
 			path = retrograde;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 		45669D762C7422ED00580218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45299F1F2C7A82E600BBF261 /* SceneKit.framework */,
 				45669D772C7422ED00580218 /* WidgetKit.framework */,
 				45669D792C7422ED00580218 /* SwiftUI.framework */,
 			);
@@ -387,6 +393,8 @@
 				4524C91E2C742893009FE4D0 /* AppIntent.swift in Sources */,
 				4524C91C2C742893009FE4D0 /* RetrogradeWidget.swift in Sources */,
 				4524C91A2C742893009FE4D0 /* RetrogradeWidgetLiveActivity.swift in Sources */,
+				45299F292C7A89AD00BBF261 /* StaticPyramidView.swift in Sources */,
+				45299F282C7A89A800BBF261 /* StaticCircleView.swift in Sources */,
 				4524C92A2C742B90009FE4D0 /* RetrogradeProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,13 +403,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45299F182C7A5D5800BBF261 /* AnimatedImageView.swift in Sources */,
 				45669D492C74202B00580218 /* ContentView.swift in Sources */,
-				4524C92D2C768DBE009FE4D0 /* StarFieldView.swift in Sources */,
 				45299F1E2C7A744600BBF261 /* SpinningPyramidView.swift in Sources */,
 				45669D472C74202B00580218 /* retrogradeApp.swift in Sources */,
-				45299F162C7A590A00BBF261 /* GlowingText.swift in Sources */,
 				45299F1C2C7A694D00BBF261 /* RetrogradeData.swift in Sources */,
+				45299F232C7A867E00BBF261 /* NoDataView.swift in Sources */,
 				45299F1A2C7A5DE000BBF261 /* BreathingCircleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
