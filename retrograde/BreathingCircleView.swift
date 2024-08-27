@@ -20,7 +20,8 @@ struct BreathingCircleView: View {
             )
             .rotationEffect(.degrees(animate ? 360 : 0))
             .animation(
-                Animation.linear(duration: 20).repeatForever(autoreverses: false)
+                .linear(duration: 20).repeatForever(autoreverses: false),
+                value: animate
             )
             .onAppear {
                 animate = true
@@ -35,8 +36,11 @@ struct BreathingCircleView: View {
                 ))
                 .frame(width: 350, height: 350)  // Increased size of the circle
                 .scaleEffect(scale)
-                .animation(Animation.easeInOut(duration: 8).repeatForever(autoreverses: true))  // Slower animation
-                .onAppear {scale = 1.0}
+                .animation(
+                    .easeInOut(duration: 8).repeatForever(autoreverses: true),
+                    value: scale
+                )
+                .onAppear { scale = 1.0 }
             
             Color.black.opacity(0.2)
                 .edgesIgnoringSafeArea(.all)
@@ -44,6 +48,7 @@ struct BreathingCircleView: View {
         }
     }
 }
+
 #Preview {
     BreathingCircleView()
 }
