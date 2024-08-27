@@ -1,16 +1,6 @@
-//
-//  StaticCircleView.swift
-//  retrograde
-//
-//  Created by Anna Kallenborn-Bolden on 8/24/24.
-//
-
-import Foundation
 import SwiftUI
 
 struct StaticCircleView: View {
-    @State private var scale: CGFloat = 1.0  // Set scale to 1.0 since there's no animation
-
     var body: some View {
         ZStack {
             LinearGradient(
@@ -18,14 +8,8 @@ struct StaticCircleView: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
-//            .edgesIgnoringSafeArea(.all)
-            
-            LinearGradient(
-                gradient: Gradient(colors: [.clear, .white.opacity(0.2)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-//            .blendMode(.screen)
+            .edgesIgnoringSafeArea(.all)
+            .frame(width: 400, height: 400)
             
             Circle()
                 .fill(LinearGradient(
@@ -33,9 +17,9 @@ struct StaticCircleView: View {
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 ))
-                .frame(width: 350, height: 350)
-                .scaleEffect(scale)
-            
+                .frame(width: 100, height: 100)
+                .scaleEffect(1)
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }

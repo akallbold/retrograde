@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isRetrograde: Bool? = false
+    @State private var isRetrograde: Bool? = true
     @State private var transitionDate: Date? = nil
-
+    
     var body: some View {
         ZStack {
             if let isRetrograde = isRetrograde, let transitionDate = transitionDate {
@@ -13,8 +13,8 @@ struct ContentView: View {
                         .font(.custom("Optima", size: 26))
                         .foregroundColor(.white)
                         .padding()
-                
-                   
+                    
+                    
                 } else {
                     BreathingCircleView()
                     VStack {
@@ -25,23 +25,24 @@ struct ContentView: View {
                     }
                 }
             } else {
-                Color.gray.edgesIgnoringSafeArea(.all)
+                NoDataView()
                 Text("No retrograde data available")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(.custom("Optima", size: 26))
+                    .padding()
             }
         }
         .onAppear {
-            checkStatus()
+                        checkStatus()
         }
     }
-
+    
     func checkStatus() {
         let status = checkRetrogradeStatus()
         self.isRetrograde = status.isRetrograde
         self.transitionDate = status.transitionDate
     }
-
+    
     func formattedDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d"

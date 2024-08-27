@@ -33,8 +33,11 @@ struct RetrogradeWidget_Previews: PreviewProvider {
         Group {
             RetrogradeWidgetEntryView(entry: RetrogradeEntry(date: Date(), isRetrograde: true))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            RetrogradeWidgetEntryView(entry: RetrogradeEntry(date: Date(), isRetrograde: false))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            RetrogradeWidgetEntryView(entry: RetrogradeEntry(date: Date(), isRetrograde: true))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+//            RetrogradeWidgetEntryView(entry: RetrogradeEntry(date: Date(), isRetrograde: false))
+//                .previewContext(WidgetPreviewContext(family: .systemMedium
+//                                                    ))
         }
     }
 }
