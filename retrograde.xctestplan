@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "13DB732D-3742-4733-B866-75F7E9A86E37",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:retrograde.xcodeproj",
+      "identifier" : "45669D422C74202B00580218",
+      "name" : "retrograde"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:retrograde.xcodeproj",
+        "identifier" : "45669D532C74202C00580218",
+        "name" : "retrogradeTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:retrograde.xcodeproj",
+        "identifier" : "45669D5D2C74202C00580218",
+        "name" : "retrogradeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

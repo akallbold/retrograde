@@ -100,6 +100,7 @@
 		45669D642C74202C00580218 /* retrogradeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retrogradeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		45669D772C7422ED00580218 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		45669D792C7422ED00580218 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		45C87CB72C7E471000C1BAE3 /* retrograde.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = retrograde.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +158,7 @@
 		45669D3A2C74202B00580218 = {
 			isa = PBXGroup;
 			children = (
+				45C87CB72C7E471000C1BAE3 /* retrograde.xctestplan */,
 				45669D452C74202B00580218 /* retrograde */,
 				45669D572C74202C00580218 /* retrogradeTests */,
 				45669D612C74202C00580218 /* retrogradeUITests */,

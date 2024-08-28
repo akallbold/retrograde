@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isRetrograde: Bool? = true
-    @State private var transitionDate: Date? = nil
+    @State  var isRetrograde: Bool? = true
+    @State  var transitionDate: Date? = nil
     
     var body: some View {
         ZStack {
@@ -50,6 +50,6 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
