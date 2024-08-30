@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State  var isRetrograde: Bool? = true
+    @State  var isRetrograde: Bool? = nil
     @State  var transitionDate: Date? = nil
     
     var body: some View {
@@ -9,7 +9,7 @@ struct ContentView: View {
             if let isRetrograde = isRetrograde, let transitionDate = transitionDate {
                 if isRetrograde {
                     SpinningPyramidView()
-                    Text("Mercury is in Retrograde until \(formattedDate(transitionDate))")
+                    Text("Mercury is in retrograde until \(formattedDate(transitionDate))")
                         .font(.custom("Optima", size: 26))
                         .foregroundColor(.white)
                         .padding()
@@ -18,7 +18,7 @@ struct ContentView: View {
                 } else {
                     BreathingCircleView()
                     VStack {
-                        Text("Mercury is not in Retrograde until \(formattedDate(transitionDate))")
+                        Text("Mercury is not in retrograde until \(formattedDate(transitionDate))")
                             .font(.custom("Optima", size: 26))
                             .foregroundColor(.white)
                             .padding()
